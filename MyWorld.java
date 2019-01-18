@@ -15,7 +15,8 @@ public class MyWorld extends World {
     public MyWorld() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1, false);
-        //this.setBackground("lucht8.jpg");
+        this.setBackground("mar.gif");
+       
 
         int[][] map = {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -51,18 +52,28 @@ public class MyWorld extends World {
         // Declareren en initialiseren van een main karakter van het spel mijne heet Hero. Deze klasse 
         // moet de klasse Mover extenden voor de camera om te werken
         Hero hero = new Hero();
-
+        
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
 
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 300, 200);
-        addObject(new Enemy(), 1170, 410);
-        
+        addObject(hero, 300, 300);
+        addObject(new Enemy(), 2370, 810);
+        addObject(new sleutel(), 90, 75);
+        addObject(new diamant(), 660, 720);
+        addObject(new sterren(), 420, 75);
+        addObject(new deur(), 3070, 1165);
+        addObject(new deur2(), 3070, 1115);
+        addObject(new greenkey(), 1110, 1000);
+        addObject(new greenbox(), 2370, 1165);
+        addObject(new Munt(), 900, 900);
+        addObject(new Munt(), 950, 900);
+        addObject(new gem(), 2370, 1165);
         // Force act zodat de camera op de juist plek staat.
         camera.act();
         hero.act();
+        
 
         // Initialiseren van de CollisionEngine zodat de speler niet door de tile heen kan lopen.
         // De collision engine kijkt alleen naar de tiles die de variabele solid op true hebben staan.
@@ -74,5 +85,6 @@ public class MyWorld extends World {
     @Override
     public void act() {
         ce.update();
+        
     }
 }
