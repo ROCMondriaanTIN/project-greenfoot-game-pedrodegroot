@@ -1,0 +1,21 @@
+#BlueJ class context
+comment0.target=Camera
+comment0.text=\n\n\ @author\ R.\ Springer\n
+comment1.params=tileEngine
+comment1.target=Camera(TileEngine)
+comment1.text=\n\ The\ constructor\ of\ the\ Camera\ class\ Camera\ class\ moves\ the\ Tiles\ and\n\ Mover\ classes\ around\ according\ to\ the\ camera\ position.\ Uses\ the\ tile\n\ engine\ to\ retrieve\ the\ tiles\ to\ move.\n\n\ @param\ tileEngine\ TileEngine\ that\ is\ used\ to\ retrieve\ the\ tiles.\n
+comment2.params=tileEngine\ speed
+comment2.target=Camera(TileEngine,\ int)
+comment2.text=\n\ The\ contructor\ of\ the\ Camera\ class\ Camera\ class\ moves\ the\ Tiles\ and\ Mover\n\ classes\ around\ according\ to\ the\ camera\ position.\ Uses\ the\ tile\ engine\ to\n\ retrieve\ the\ tiles\ to\ move.\n\n\ @param\ tileEngine\ TileEngine\ that\ is\ used\ to\ retrieve\ te\ tiles.\n\ @param\ speed\ the\ speed\ of\ the\ movement\ of\ the\ camera\ (Free\ movement)\n
+comment3.params=mover
+comment3.target=void\ follow(Mover)
+comment3.text=\n\ This\ methode\ will\ make\ this\ class\ follow\ the\ Mover\ you\ give.\n\n\ @param\ mover\ A\ Mover\ class\ or\ an\ extend\ of\ it.\ The\ Mover\ class\ is\ able\ to\n\ be\ followed.\n
+comment4.params=
+comment4.target=void\ act()
+comment5.params=dirX\ dirY
+comment5.target=void\ move(double,\ double)
+comment5.text=\n\ This\ methode\ can\ be\ used\ to\ move\ the\ camera\ around\ the\ world.\ Make\ sure\n\ you\ don't\ move\ when\ you\ are\ following.\n\n\ @param\ dirX\ The\ direction\ x\n\ @param\ dirY\ The\ direction\ y\n
+comment6.params=
+comment6.target=void\ updateView()
+comment6.text=\n\ This\ method\ will\ update\ the\ Tiles\ from\ the\ engine\ to\ match\ the\ view.\ Also\n\ it\ will\ update\ all\ the\ Movers\ classes\ in\ the\ wolrd.\ So\ objects\ move\n\ around\ with\ the\ camera.\ If\ an\ Actor\ class\ is\ added\ it\ will\ not\ move\n\ around\ with\ the\ camera.\ It\ has\ to\ be\ a\ class\ that\ is\ the\ Mover\ or\ a\n\ extend\ of\ the\ Mover\ class.\n
+numComments=7

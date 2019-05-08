@@ -12,12 +12,21 @@ public class Mover extends Actor {
     public double velocityX;
     public double velocityY;
     protected Camera camera;
+    public int lastX, lastY, plastX, plastY, p2lastX, p2lastY, p3lastX, p3lastY;
 
     private int worldX;
     private int worldY;
     private boolean firstLocation = true;
     private boolean hasCamera;
 
+    public void Label(String text)
+    {
+     
+        GreenfootImage img = new GreenfootImage(100,30);
+        img.drawString(text,2,20);
+        setImage(img);
+    }
+          
     /**
      * Methode to set the camera a Mover can have
      *
@@ -48,7 +57,9 @@ public class Mover extends Actor {
         if (Math.abs(velocityY) < 0.01) {
             velocityY = 0;
         }
-        setLocation((int) (getX() + .5 + velocityX), (int) (getY() + .5 + velocityY));
+       
+        setLocation(getX() + (int)velocityX, getY() + (int)velocityY);
+        
     }
 
     @Override

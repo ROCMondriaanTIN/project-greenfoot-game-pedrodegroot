@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.target=Hero
+comment0.text=\r\n\r\n\ @author\ R.\ Springer\r\n
+comment1.params=
+comment1.target=Hero()
+comment2.params=
+comment2.target=void\ act()
+comment3.params=
+comment3.target=void\ actw()
+comment4.params=
+comment4.target=void\ handleInput()
+comment5.params=
+comment5.target=int\ getWidth()
+comment6.params=
+comment6.target=int\ getHeight()
+numComments=7

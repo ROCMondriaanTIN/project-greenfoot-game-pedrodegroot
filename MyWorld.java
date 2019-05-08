@@ -15,7 +15,7 @@ public class MyWorld extends World {
     public MyWorld() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1, false);
-        this.setBackground("mar.gif");
+        // this.setBackground("mar.gif");
        
 
         int[][] map = {
@@ -60,15 +60,18 @@ public class MyWorld extends World {
         addObject(camera, 0, 0);
         addObject(hero, 300, 300);
         addObject(new Enemy(), 2370, 810);
-        addObject(new sleutel(), 90, 75);
-        addObject(new diamant(), 660, 720);
-        addObject(new sterren(), 420, 75);
+        
+        
         addObject(new deur(), 3070, 1165);
         addObject(new deur2(), 3070, 1115);
         addObject(new greenkey(), 1110, 1000);
         addObject(new greenbox(), 2370, 1165);
-        addObject(new Munt(), 900, 900);
-        addObject(new Munt(), 950, 900);
+        addObject(new redkey(), 1110, 1000);
+        addObject(new redbox(), 2370, 1165);
+        addObject(new bluekey(), 1110, 1000);
+        addObject(new bluebox(), 2370, 1165);
+        // addObject(new munt(), 800, 800);
+        
         addObject(new gem(), 2370, 1165);
         // Force act zodat de camera op de juist plek staat.
         camera.act();

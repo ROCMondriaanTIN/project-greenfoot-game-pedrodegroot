@@ -15,8 +15,7 @@ public class lv2 extends World {
     public lv2() {
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(800, 800, 1, false);
-        this.setBackground("mar.gif");
-
+        // this.setBackground("mar.gif");
         int[][] map = {
         {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
 {-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1,-1},
@@ -80,17 +79,19 @@ public class lv2 extends World {
         // Laat de camera een object volgen. Die moet een Mover instatie zijn of een extentie hiervan.
         camera.follow(hero);
 
+                addObject(new redbox(), 500, 1800);
+
+        
         // Alle objecten toevoegen aan de wereld: camera, main karakter en mogelijke enemies
         addObject(camera, 0, 0);
-        addObject(hero, 300, 200);
-        addObject(new Enemy(), 1570, 1830);
-        addObject(new sleutel(), 90, 75);
-        addObject(new diamant(), 660, 720);
-        addObject(new sterren(), 420, 75);
-        addObject(new redkey(), 1285, 1500);
-        addObject(new Munt(), 1900, 1700);
-        addObject(new Munt(), 1700, 1700);  
-        addObject(new redbox(), 5970, 1828);
+        addObject(hero, 300, 1814);
+        // addObject(new Enemy(), 1770, 1830);
+        // addObject(new redkey(), 1285, 1800);
+        addObject(new bluekey(), 1385, 1800);
+        addObject(new greenkey(), 1485, 1800);
+        addObject(new redbox(), 1585, 1800);
+        addObject(new bluebox(), 1685, 1800);
+        addObject(new greenbox(), 1785, 1800);
         
         addObject(new gem(), 5970, 1828);
         // Force act zodat de camera op de juist plek staat.

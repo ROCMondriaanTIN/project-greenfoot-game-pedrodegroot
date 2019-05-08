@@ -1,0 +1,7 @@
+#BlueJ class context
+comment0.target=TileFactory
+comment0.text=\n\n\ @author\ R.\ Springer\n
+comment1.params=mapIcon
+comment1.target=Tile\ createTile(int)
+comment1.text=\n\ Creates\ a\ Tile\ object\ based\ on\ the\ mapIcon\ number\ you\ give\n\n\ @param\ mapIcon\ number\n\ @return\ Tile\ tile\ object\n
+numComments=2

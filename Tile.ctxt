@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=Tile
+comment0.text=\n\n\ @author\ R.\ Springer\n
+comment1.params=image\ width\ heigth
+comment1.target=Tile(java.lang.String,\ int,\ int)
+comment1.text=\n\ Contructor\ of\ the\ tile.\ Creates\ a\ tile\ based\ on\ image,\ width\ and\ height\n\n\ @param\ image\ Path\ to\ the\ image\ file\n\ @param\ width\ Width\ of\ the\ tile\n\ @param\ heigth\ Height\ of\ the\ tile\n
+comment2.params=
+comment2.target=java.lang.String\ toString()
+numComments=3

@@ -11,7 +11,16 @@ public class Hero extends Mover {
     private final double acc;
     private final double drag;
     int player = 1; 
-
+    int redkey = 0;
+    boolean hasredkey = false;
+    int bluekey = 0; 
+    int greenkey = 0;
+    
+    boolean collisionActive = false;
+    boolean a = true;
+    
+    
+        
     public Hero() {
         super();
         gravity = 9.8;
@@ -26,14 +35,43 @@ public class Hero extends Mover {
         
         velocityX *= drag;
         velocityY += acc;
+        
+        p3lastX = p2lastX; p3lastY = p2lastY;
+        p2lastX = plastX; p2lastY = plastY;
+        plastX = lastX; plastY = lastY;
+        lastX = getX(); lastY = getY(); 
+         
         if (velocityY > gravity) {
             velocityY = gravity;
         }
+        
         applyVelocity();
-
+        
+       for (Actor hero : getIntersectingObjects(redbox.class)) {
+        
+            if(hero != null) {
+                setLocation(p3lastX, p3lastY);  
+             }
+        }
+         
+        for (Actor hero : getIntersectingObjects(bluebox.class)) {
+        
+            if(hero != null) {
+                setLocation(p3lastX, p3lastY);  
+             }
+        }
+        
+        for (Actor hero : getIntersectingObjects(greenbox.class)) {
+        
+            if(hero != null) {
+                setLocation(p3lastX, p3lastY);  
+             }
+        }
+        
+        
         for (Actor enemy : getIntersectingObjects(Enemy.class)) {
             if (enemy != null) {
-                setLocation(300, 200);
+                setLocation(200, 1800);
                 Greenfoot.setWorld(new gameover());
                 break;
             }
@@ -47,39 +85,47 @@ public class Hero extends Mover {
         } 
         for (Actor hero : getIntersectingObjects(redkey.class)) {
             if (hero != null) {
+                                
                 removeTouching(redkey.class);
+                redkey=1;
+              
                 break;
             }
         } 
         for (Actor hero : getIntersectingObjects(bluekey.class)) {
             if (hero != null) {
+                
                 removeTouching(bluekey.class);
+                bluekey=1;
                 break;
             }
         } 
         for  (Actor hero : getIntersectingObjects(greenkey.class)) {
             if (hero != null) {
                 removeTouching(greenkey.class);
+                greenkey=1;
                 break;
             }
         } 
         for   (Actor hero : getIntersectingObjects(greenbox.class)) {
-            if (hero != null) {
+            if (greenkey==1) {
                 removeTouching(greenbox.class);
                 break;
             }
         }  
         for    (Actor hero : getIntersectingObjects(bluebox.class)) {
-            if (hero != null) {
+            if (bluekey==1) {
                 removeTouching(bluebox.class);
                 break;
             }
         } 
         for     (Actor hero : getIntersectingObjects(redbox.class)) {
-            if (hero != null) {
+            if (redkey==1) {
+                          
                 removeTouching(redbox.class);
                 break;
             }
+             
         } 
         for     (Actor hero : getIntersectingObjects(gem.class)) {
             if (hero != null) {
@@ -117,27 +163,52 @@ public class Hero extends Mover {
         }
         
     } 
+       public void actw() 
+    {
+        if (Greenfoot.isKeyDown("W"))
+        {
+            setLocation(getX(),(p3lastY)-2);
+        }
         
+        
+        
+    } 
 
     public void handleInput() {
         if (Greenfoot.isKeyDown("w")) {
             setImage("p"+ player +"_jump.png");
-            velocityY = -20;
+            
+            velocityY = -2;
+            actw(); 
+ 
         } 
         if (Greenfoot.isKeyDown("s")) {
             setImage("p"+ player +"_duck.png");
-            velocityY = 0;
-        }
+            
+            velocityY = 2;
+            actw();
+ 
+            }
 
         if (Greenfoot.isKeyDown("a")) {
            setImage("p"+ player +"_front.png");
-            velocityX = -2;
-        } else if (Greenfoot.isKeyDown("d")) {
+           
+           velocityX = -2;
+
+           actw();
+
+           } 
+        
+        if (Greenfoot.isKeyDown("d")) {
             setImage("p"+ player +"_stand.png");
+ 
             velocityX = 2;
-        }
+            actw();
+ 
+            }
+        
     }
-    
+   
     public int getWidth() {
         return getImage().getWidth();
     }
